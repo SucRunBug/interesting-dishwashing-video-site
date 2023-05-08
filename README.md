@@ -41,13 +41,15 @@ RGB: 203, 55, 13
 
 ### 图像
 
-偷个懒，直接Google搜图，其实我更想拿AI跑。
-
-<img src="/Users/yfy/Desktop/github/interesting-dishwashing-video-site/photo_src/wash-dishes.jpg" alt="wash-dishes" style="zoom:33%;" />
+偷个懒，可以直接Google搜图，但其实我更想拿AI跑。
 
 如果需要避免侵权，检索照片时也是有办法的：点击*工具*按钮，然后点击下面出现的*使用权限*选项。你应该选择*知识共享许可*这个选项。
 
 But it's a little strange.
+
+<img src=".\photo_src\washing-maid.png" alt="washing-maid" style="zoom: 33%;" />
+
+怪就对了，怪才是AI画的。
 
 ### 字体
 
