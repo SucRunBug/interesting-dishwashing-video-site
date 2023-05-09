@@ -70,3 +70,22 @@ But it's a little strange.
 font-family: 'ZCOOL KuaiLe', sans-serif;
 ```
 
+
+
+## 网站文件结构
+
+文件命名据说使用小写字母，但我喜欢用驼峰法进行命名，既然[教程](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/Dealing_with_files)这么说了，我就全部以小写字母创建我的网站工程文件夹`web-site`，每个单词之间以短横线分隔，之前我其实更爱用下划线，可能是编码中用得更多。再在工程文件中创建一个新的文件夹`test-site`，这将用于存放我的第一个网站，作为测试使用。
+
+那么接下来我就在`test-site`文件夹中创建了以下几个东西，作为常见的网站文件结构：
+
+1. index.html，即为网站主页。
+2. images 文件夹，存放图片资源。
+3. styles 文件夹，存放用于设置样式的css代码。
+4. scripts 文件夹，存放用于向网站添加交互功能的JavaScript代码。
+
+在展示我的AI生成的女仆小姐时，出现了奇怪的路径显示，我是用的是相对路径，如果是`"/images/washing-maid.png"`就没有办法显示，如果去掉最前面的斜杠或者在最前加上.就能正常显示，what the f**k?
+
+还有safari浏览器特有的蛋疼，需要在访问的文件上加上`file://`，才可以直接渲染出页面，不然就给你Google搜索这串路径。但用edge浏览器就没有这样的问题，可是我还是选择使用Safari，因为我选择相信苹果宣传这个浏览器非常节能，并且通过我的观察，占用的内存也会比edge浏览器少很多。
+
+但考虑到这个项目需要跨平台使用，现在是macOS，文件间隔符与Linux相同，但Windows下却是反斜杠，但事实上我想多了，因为对于html文档，Windows下也是使用正斜杠。So, thank you html.
+
