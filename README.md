@@ -89,3 +89,121 @@ font-family: 'ZCOOL KuaiLe', sans-serif;
 
 但考虑到这个项目需要跨平台使用，现在是macOS，文件间隔符与Linux相同，但Windows下却是反斜杠，但事实上我想多了，因为对于html文档，Windows下也是使用正斜杠。So, thank you html.
 
+
+
+## HTML 基础
+
+大致看了一下，还是发现了以前没掌握和遗忘的知识。所以简单记录一下，以增强记忆。
+
+### 元素
+
+比如一个段落段落元素：
+
+```html
+<P>想不出骚话</p>
+```
+
+第一个p叫开始标签，英文叫opening tag
+
+最后一个p叫结束标签，英文叫closing tag
+
+前两者之间的叫内容，content
+
+这一整块就是元素，element
+
+写英文主要是有时候需要阅读英文资源，以便区分，可不是展示我的四级英文水平。
+
+
+
+元素还具有属性
+
+```html
+<p class="editor-note">想不出骚话</p>
+```
+
+class是属性名称，引号里的是属性的值。
+
+
+
+元素还有空元素，比如img，img元素是不用写内容和结束标签的，非常简洁。
+
+```html
+<img src="images/washing-maid.png" alt="My test image">
+```
+
+注意到还有一个属性叫alt，这个是给视觉障碍的人通过屏幕阅读器听的，或者当图片无法显示时，会在屏幕上显示该文本。
+
+### HTML 文档详解
+
+我的第一个页面的文档是类似这样的：
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <img src="images/firefox-icon.png" alt="My test image">
+  </body>
+</html>
+
+```
+
+一般HTML首行是`<!DOCTYPE html>`，这仅用于确保文件正常读取。
+
+接下来的`<html>`是页面的整个内容，也叫根元素。
+
+其中的`<head>`元素，常包含面向搜索引擎的关键字（这我不熟），页面描述，CSS样式表和字符编码。
+
+之后的`<body>`元素，包含用户能看到的元素。
+
+### 列表和链接
+
+无序列表元素`<ul>`
+
+全称是unordered list
+
+有序列表元素`<ol>`
+
+ordered list
+
+每一个项目又被元素`<li>`包含。
+
+比如我将我的测试页面这样写：
+
+```html
+<p>最有趣的洗碗视频网站，在这里你可以：</p>
+<ul>
+    <li>观看在线的洗碗小视频和小电影。</li>
+    <li>上传你的洗碗欢乐时刻。</li>
+    <li>学习最高效和有趣的洗碗技巧。</li>
+    <li>觉得洗碗枯燥？选一款适合你的洗碗机。</li>
+</ul>
+```
+
+
+
+链接元素`<a>`，作为英文锚anchor的缩写。
+
+```html
+<a href="https://github.com/SucRunBug/interesting-dishwashing-video-site">本站源码地址</a>
+```
+
+其中href属性是hypertext reference 的缩写。
+
+还有一点是，尽量加上http的前缀，不然可能出现指向错误。
+
+### 扩展功能
+
+如果需要更多功能，可以参考[使用 HTML 组织网站内容 - 学习 Web 开发 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Learn/HTML)
+
+里面当然包含了小视频和小电影的嵌入。
+
+
+
+## CSS 基础
+
+层叠样式表（**C**ascading **S**tyle **S**heet，简称：CSS）
+
