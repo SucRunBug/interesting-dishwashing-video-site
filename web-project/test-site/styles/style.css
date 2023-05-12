@@ -1,0 +1,30 @@
+html {
+    font-size: 10px;
+    font-family: 'ZCOOL KuaiLe', sans-serif;
+    background-color: #00539F;
+}
+h1 {
+    margin: 0;
+    padding: 20px 0;
+    color: #00539F;
+    text-shadow: 3px 3px 1px black; /* 水平偏移值 垂直偏移值 模糊半径 */
+    font-size: 60px;
+    text-align: center;
+}
+p,
+li {
+    font-size: 16px;
+    line-height: 2;     /* 行高 参数如果是数字，就是当前字体大小乘上数字 */
+    letter-spacing: 1px;    /* 字间距 */
+}
+body {
+    width: 600px;
+    margin: 0 auto; /* 外边距，围绕元素外部的空间 参数顺序：上边距 左右边距 */
+    background-color: #FF9500;
+    padding: 0 20px 20px 20px;  /* 内边距，围绕着内容（比如段落）的空间 参数顺序：上右下左 */
+    border: 5px solid black;    /* 边框，紧接着内边距的线 参数顺序：宽度 实线 */
+}
+img {
+    display: block; /*  设置block属性 */
+    margin: auto;
+}

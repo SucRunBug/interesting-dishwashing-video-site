@@ -197,7 +197,7 @@ ordered list
 
 ### 扩展功能
 
-如果需要更多功能，可以参考[使用 HTML 组织网站内容 - 学习 Web 开发 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Learn/HTML)
+如果需要更多功能，可以参考[使用 HTML 组织网站内容](https://developer.mozilla.org/zh-CN/docs/Learn/HTML)
 
 里面当然包含了小视频和小电影的嵌入。
 
@@ -207,3 +207,68 @@ ordered list
 
 层叠样式表（**C**ascading **S**tyle **S**heet，简称：CSS）
 
+css文件需要和html关联，在html中通过元素`<link>`，其中包含属性href和rel，前者为文件路径，后者为两者关系，这里用的stylesheet，表示链接的是样式表文件。
+
+CSS中，每个样式由选择器selector、声明declaration、属性properties、属性的值组成。
+
+选择器是指定的html元素，比如要修改`<p>`的颜色，选择器就是p，声明包含属性和属性的值。
+
+```css
+p {
+  color: red;
+}
+
+```
+
+  更多选择器可参考https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
+
+字体使用之前在选定内容阶段推荐的网站中生成的代码，插入到html中的`<head>`中，然后还有一个css代码，插入选择器为html中。
+
+我的css文件及相关注释说明：
+
+```css
+html {
+    font-size: 10px;
+    font-family: 'ZCOOL KuaiLe', sans-serif;
+    background-color: #00539F;
+}
+h1 {
+    margin: 0;
+    padding: 20px 0;
+    color: #00539F;
+    text-shadow: 3px 3px 1px black; /* 水平偏移值 垂直偏移值 模糊半径 */
+    font-size: 60px;
+    text-align: center;
+}
+p,
+li {
+    font-size: 16px;
+    line-height: 2;     /* 行高 参数如果是数字，就是当前字体大小乘上数字 */
+    letter-spacing: 1px;    /* 字间距 */
+}
+body {
+    width: 600px;
+    margin: 0 auto; /* 外边距，围绕元素外部的空间 参数顺序：上边距 左右边距 */
+    background-color: #FF9500;
+    padding: 0 20px 20px 20px;  /* 内边距，围绕着内容（比如段落）的空间 参数顺序：上右下左 */
+    border: 5px solid black;    /* 边框，紧接着内边距的线 参数顺序：宽度 实线 */
+}
+img {
+    display: block; /*  设置block属性 */
+    margin: auto;
+}
+```
+
+
+
+这一章节结束后我做出来的页面效果是：
+
+<img src="photo_src/demonstration1.png" alt="效果演示" style="zoom:30%;" />
+
+padding部分的颜色其实可以和图片中的白色背景做一个融合，然后margin部分的颜色可以和女仆的黑色衣服做一个融合。
+
+我使用affinity photo 2的颜色拾取工具来确定颜色通道，选择某个点后，在右边栏找到颜色，比如背后的墙壁颜色的RGB是214 196 174，还有黑色衣服是18 14 14，那么在CSS中为rgb(18, 14, 14)
+
+不过我这个版本是通过了四个自动进行调整过的（自动色阶、对比度、白平衡、颜色），此文档中的该图片就是被调整后的，之后可以按照图片内容进行进一步修改，能使整个网站页面更加一致。
+
+[参考教程](https://affinity.help/photo2/zh-Hans.lproj/index.html?page=pages/Clr/ClrProfiles.html?title=颜色管理)
