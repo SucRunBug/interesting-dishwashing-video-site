@@ -272,3 +272,37 @@ padding部分的颜色其实可以和图片中的白色背景做一个融合，�
 不过我这个版本是通过了四个自动进行调整过的（自动色阶、对比度、白平衡、颜色），此文档中的该图片就是被调整后的，之后可以按照图片内容进行进一步修改，能使整个网站页面更加一致。
 
 [参考教程](https://affinity.help/photo2/zh-Hans.lproj/index.html?page=pages/Clr/ClrProfiles.html?title=颜色管理)
+
+
+
+## JavaScript基础
+
+脚本也需要像CSS那样，在html中指定链接位置，但位置是在`</body>`的前面。
+
+例如：
+
+```html
+<script src="scripts/main.js" defer></script>
+
+```
+
+其中的defer可以让脚本的不会打断html页面的解析，在解析完成后才执行脚本。
+
+基本上和其它的编程语言差不多，但有些不一样，比如用`let`而不是`var`定义变量，比如不等于是`!==`
+
+还有一些有趣的写法：
+
+```js
+/* method 1 */
+document.querySelector("html").addEventListener("click", function () {
+  alert("别戳我，我怕疼。");
+});
+
+/* method 2 */
+document.querySelector('html').addEventListener('click', () => {
+  alert('别戳我，我怕疼。');
+});
+
+```
+
+两种写法均实现了在html页面监听到了鼠标点击事件后，通过回调函数提示信息。但唯一不同的是写法二使用了匿名函数。
