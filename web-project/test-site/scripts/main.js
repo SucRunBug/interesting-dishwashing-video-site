@@ -1,3 +1,4 @@
+// click to change photo
 let myImage = document.querySelector('img');
 
 myImage.onclick = function() {
@@ -7,14 +8,19 @@ myImage.onclick = function() {
     } else {
       myImage.setAttribute('src', 'images/washing-maid.png');
     }
-}
+};
 
+// click button to change user while storage and welcome sentense
 let myButton = document.querySelector('button');
 let myHeading = document.querySelector('h1');
 function setUserName() {
     let myName = prompt('please input your name.');
-    localStorage.getItem('name', myName);
-    myHeading.textContent = "Make washing cool! " + myName;
+    if (!myName || myName === null) {
+        setUserName();
+    } else {
+        localStorage.setItem('name', myName);
+        myHeading.innerHTML = "Make washing cool! " + myName;
+    }
 }
 
 if (!localStorage.getItem('name')) {
@@ -26,4 +32,4 @@ if (!localStorage.getItem('name')) {
 
 myButton.onclick = function() {
     setUserName();
-}
+};

@@ -277,6 +277,8 @@ padding部分的颜色其实可以和图片中的白色背景做一个融合，�
 
 ## JavaScript基础
 
+### 基础语法
+
 脚本也需要像CSS那样，在html中指定链接位置，但位置是在`</body>`的前面。
 
 例如：
@@ -288,9 +290,11 @@ padding部分的颜色其实可以和图片中的白色背景做一个融合，�
 
 其中的defer可以让脚本的不会打断html页面的解析，在解析完成后才执行脚本。
 
-基本上和其它的编程语言差不多，但有些不一样，比如用`let`而不是`var`定义变量，比如不等于是`!==`
+基本上和其它的编程语言差不多，但有些不一样，比如用`let`而不是`var`定义变量，比如不等于是`!==`，等于是`===`
 
-还有一些有趣的写法：
+### 事件
+
+document对象调用接口querySelector可以指定找到某个部分，对其可以添加相关事件，比如点击。
 
 ```js
 /* method 1 */
@@ -309,4 +313,33 @@ document.querySelector('html').addEventListener('click', () => {
 
 
 
-按照教程，我好像没有成功实现加载本地变量，所以并不能实现在不输入用户名的情况下，加载已有用户名，而是只能在每次刷新浏览器后重新输入用户名。
+接下来我实现了点击页面上的女仆图片，即可在原位立刻切换一张，如果参考“幻影坦克”的玩法，一定会更加有趣。
+
+原理是，使用了js配合dom API，在图片上创建鼠标点击的监听器，点击后根据当前图片内容进行选择要展示的新图片。
+
+按照教程，我好像没有成功实现加载本地变量，所以并不能实现在不输入用户名的情况下，加载已有用户名，而是只能在每次刷新浏览器后重新输入用户名。通过比对我发现了问题所在，在首次进入页面输入用户名的情况下，加载用户输入值时用错了接口，应该是setItem设置本地变量，设置标语时是使用innerHTML，而不是textContent，前者修改整个HTML结构，后者只修改文本内容。
+
+我还了解到需要提防用户传来的修改innerHTML的指令，因为可能是跨站脚本攻击，如XSS
+
+
+
+## 发布网站
+
+我目前选择了最简单且免费的网站发布方式，将网站上传到GitHub仓库，仓库名是username.github.io，然后直接访问这个地址即可打开网站。
+
+不过我还需要了解一下其它的方式，因为商用网站一般都不这样的。
+
+可以先租用服务器或自己搭建个人服务器，以获得网站存储空间，这叫做主机服务。之后租用一个域名，以便用户快捷访问一个独一无二的网址。上传资源到服务器也需要使用比如FTP之类的协议。
+
+主机服务也有免费的，比如[Neocities](https://neocities.org/)，[Blogger](https://www.blogger.com/)，[Wordpress](https://wordpress.com/)
+
+Google App Engine 是一个让你可以在 Google 的基础架构上构建和运行应用的强劲平台——无论你是需要从头开始构建多级 web 应用还是托管一个静态网站。参阅[How do you host your website on Google App Engine?](https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Tools_and_setup/How_do_you_host_your_website_on_Google_App_Engine)以获取更多信息。
+
+有许多 web 应用能够仿真一个网站开发环境。你可以在这种应用——通常只有一个标签页——里输入 HTML、CSS 和 JavaScript 代码然后像显示网页一样显示代码的结果。通常这些工具都很简单，对学习很有帮助，而且至少有免费的基本功能，它们在一个独特的网址显示你提交的网页。不过，这些应用的基础功能很有限，而且应用通常不提供空间来存储图像等内容。
+
+使用一下以下几种工具，看看你最喜欢哪一个：
+
+- [JSFiddle](https://jsfiddle.net/)
+- [Glitch](https://glitch.com/)
+- [JSBin](http://jsbin.com/)
+- [CodePen](https://codepen.io/)
